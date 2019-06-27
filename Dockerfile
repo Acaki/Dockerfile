@@ -4,7 +4,8 @@ RUN pecl install redis \
     && pecl install xdebug \
     && docker-php-ext-install pdo_mysql \
     && docker-php-ext-install mysqli \
-    && docker-php-ext-enable redis xdebug mysqli
+    && docker-php-ext-install bcmath \
+    && docker-php-ext-enable redis xdebug
 
 # Enable htacess rewrte function
 RUN a2enmod rewrite headers
