@@ -1,7 +1,7 @@
 FROM php:7.1.28-apache
 
 # Install other required packages
-RUN apt-get update && apt-get install git zip libcurl4-openssl-dev pkg-config libssl-dev -y
+RUN apt-get update && apt-get install git zip libcurl4-openssl-dev pkg-config libssl-dev libxml2-dev -y
 
 # Install php extensions
 RUN pecl install redis \
@@ -10,6 +10,7 @@ RUN pecl install redis \
     && docker-php-ext-install pdo_mysql \
     && docker-php-ext-install mysqli \
     && docker-php-ext-install bcmath \
+    && docker-php-ext-install soap \
     && docker-php-ext-enable redis xdebug mongodb
 
 # Enable htacess rewrte function
