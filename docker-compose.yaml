@@ -1,0 +1,8 @@
+version: "3"
+services:
+  proj:
+    image: awoodocker/basic-images-centos:1.4-php
+    ports:
+      - "80:80"
+    volumes:
+      - ./:/var/www/html/
